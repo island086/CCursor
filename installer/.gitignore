@@ -4,6 +4,7 @@ vsix/
 installer.zip
 
 # Packages
+*.tgz
 node_modules/
 
 # macOS

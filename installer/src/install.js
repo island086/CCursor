@@ -104,5 +104,5 @@ export async function install() {
   console.log('');
   ok('Installation complete!');
   warn('Restart Cursor for changes to take effect.');
-  info('Uninstall: npx @cometix/ccursor uninstall');
+  info('Uninstall: npx @stomehero/ccursor uninstall');
 }

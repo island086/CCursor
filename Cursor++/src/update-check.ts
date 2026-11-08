@@ -1,13 +1,13 @@
 /**
  * 版本更新检查
  *
- * 从 npm registry 查询 @cometix/ccursor 最新版本，
+ * 从 npm registry 查询 @stomehero/ccursor 最新版本，
  * 与当前 extension 版本比较，有更新时弹通知。
  */
 import * as vscode from 'vscode'
 import { version as CURRENT_VERSION } from '../package.json'
 
-const NPM_PACKAGE = '@cometix/ccursor'
+const NPM_PACKAGE = '@stomehero/ccursor'
 const REGISTRY_URL = `https://registry.npmjs.org/${NPM_PACKAGE}/latest`
 /** 提示用户自行在终端执行；不代跑（可能需管理员/Cursor 关闭等权限） */
 const UPDATE_COMMAND = `npx ${NPM_PACKAGE} update`
@@ -21,15 +21,47 @@ function getCurrentVersion(): string {
   return CURRENT_VERSION
 }
 
+function parseVersion(version: string): { core: number[], prerelease: string[] } {
+  const [core, prerelease = ''] = version.split('-', 2)
+  return {
+    core: core.split('.').map(part => Number.parseInt(part, 10) || 0),
+    prerelease: prerelease ? prerelease.split('.') : [],
+  }
+}
+
 function compareVersions(a: string, b: string): number {
-  const pa = a.split('.').map(Number)
-  const pb = b.split('.').map(Number)
-  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
-    const va = pa[i] ?? 0
-    const vb = pb[i] ?? 0
+  const pa = parseVersion(a)
+  const pb = parseVersion(b)
+  for (let i = 0; i < Math.max(pa.core.length, pb.core.length); i++) {
+    const va = pa.core[i] ?? 0
+    const vb = pb.core[i] ?? 0
     if (va !== vb)
       return va - vb
   }
+
+  if (!pa.prerelease.length || !pb.prerelease.length) {
+    return Number(!pa.prerelease.length) - Number(!pb.prerelease.length)
+  }
+
+  for (let i = 0; i < Math.max(pa.prerelease.length, pb.prerelease.length); i++) {
+    const va = pa.prerelease[i]
+    const vb = pb.prerelease[i]
+    if (va === undefined)
+      return -1
+    if (vb === undefined)
+      return 1
+    if (va === vb)
+      continue
+
+    const aNumeric = /^\d+$/.test(va)
+    const bNumeric = /^\d+$/.test(vb)
+    if (aNumeric && bNumeric)
+      return Number(va) - Number(vb)
+    if (aNumeric !== bNumeric)
+      return aNumeric ? -1 : 1
+    return va < vb ? -1 : 1
+  }
+
   return 0
 }
 
