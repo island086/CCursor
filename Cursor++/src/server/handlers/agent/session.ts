@@ -2,7 +2,8 @@
  * Agent Session 管理
  *
  * SSE 降级模式下，Client 通过两个独立通道通信:
- *   - BidiAppend (unary) — 发送 AgentClientMessage (data=base64 proto)
+ *   - BidiAppend (unary) — 发送 AgentClientMessage
+ *     (旧版 data=hex proto，当前版 dataBinary=raw proto bytes)
  *   - RunSSE (server_streaming) — 接收 AgentServerMessage 流
  *
  * 两者通过 requestId 关联。Session 维护一个 per-requestId 的消息队列，
