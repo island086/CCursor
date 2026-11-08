@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@cometix/ccursor"><img src="https://img.shields.io/npm/v/@cometix/ccursor" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@stomehero/ccursor"><img src="https://img.shields.io/npm/v/@stomehero/ccursor" alt="npm" /></a>
   <a href="https://linux.do/t/topic/1926833"><img src="https://img.shields.io/badge/LinuxDO-Discussion-blue" alt="LinuxDO" /></a>
 </p>
 
@@ -32,16 +32,16 @@ Cursor++ 让你使用**自己的 LLM API Key**（Anthropic / OpenAI / Google Gem
 
 ```bash
 # Install / 安装
-npx @cometix/ccursor install
+npx @stomehero/ccursor install
 
 # Restart Cursor, then open the Cursor++ sidebar panel to configure providers
 # 重启 Cursor，打开侧边栏 Cursor++ 面板配置服务商
 
 # Uninstall / 卸载
-npx @cometix/ccursor uninstall
+npx @stomehero/ccursor uninstall
 
 # Check installation status / 检查安装状态
-npx @cometix/ccursor status
+npx @stomehero/ccursor status
 ```
 
 ---
@@ -173,5 +173,5 @@ This repository is for **issue tracking and documentation only** — source code
 ---
 
 <p align="center">
-  <a href="https://linux.do/t/topic/1926833">LinuxDO</a> · <a href="https://ccursor.cometix.dev">Hub</a> · <a href="https://www.npmjs.com/package/@cometix/ccursor">npm</a>
+  <a href="https://linux.do/t/topic/1926833">LinuxDO</a> · <a href="https://ccursor.cometix.dev">Hub</a> · <a href="https://www.npmjs.com/package/@stomehero/ccursor">npm</a>
 </p>

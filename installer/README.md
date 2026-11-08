@@ -1,21 +1,21 @@
-# @cometix/ccursor
+# @stomehero/ccursor
 
 Cursor++ BYOK Installer — Bring Your Own Key for Cursor IDE.
 
 ## Install
 
 ```bash
-npx @cometix/ccursor install
+npx @stomehero/ccursor install
 ```
 
 ## Uninstall
 
 ```bash
-npx @cometix/ccursor uninstall
+npx @stomehero/ccursor uninstall
 ```
 
 ## Status
 
 ```bash
-npx @cometix/ccursor status
+npx @stomehero/ccursor status
 ```

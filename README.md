@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@cometix/ccursor"><img src="https://img.shields.io/npm/v/@cometix/ccursor" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@stomehero/ccursor"><img src="https://img.shields.io/npm/v/@stomehero/ccursor" alt="npm" /></a>
 </p>
 
 ---
@@ -28,15 +28,15 @@ Cursor++ lets you use **your own LLM API keys** (Anthropic, OpenAI, Google Gemin
 
 ```bash
 # Install
-npx @cometix/ccursor install
+npx @stomehero/ccursor install
 
 # Restart Cursor, then open the Cursor++ sidebar panel to configure providers
 
 # Uninstall
-npx @cometix/ccursor uninstall
+npx @stomehero/ccursor uninstall
 
 # Check installation status
-npx @cometix/ccursor status
+npx @stomehero/ccursor status
 ```
 
 ---
@@ -148,5 +148,5 @@ This repository is for **issue tracking and documentation only** — source code
 ---
 
 <p align="center">
-  <a href="https://ccursor.cometix.dev">Hub</a> · <a href="https://www.npmjs.com/package/@cometix/ccursor">npm</a>
+  <a href="https://ccursor.cometix.dev">Hub</a> · <a href="https://www.npmjs.com/package/@stomehero/ccursor">npm</a>
 </p>
